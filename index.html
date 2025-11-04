@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0d9488">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Presentación: Modelos Formativos en Calidad y Seguridad</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de la fuente Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo personalizado para la fuente Inter */
+        html, body {
+            font-family: 'Inter', sans-serif;
+            height: 100%;
+            overflow: hidden; /* Evitar scroll de la página */
+        }
+        body {
+            background-color: #f3f4f6; /* bg-gray-100 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Contenedor principal que define el tamaño */
+        .presentation-container {
+            height: 90vh; /* Altura de la diapositiva */
+            max-height: 800px;
+            width: 100%;
+            position: relative;
+        }
+
+        /* Contenedor de slides que llena al padre */
+        #slides-container {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+        
+        /* Estilo de la diapositiva */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* rounded-3xl */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e5e7eb; /* border-gray-200 */
+            width: 100%;
+            height: 100%; /* Llenar el slides-container */
+            overflow-y: auto; /* Scroll si el contenido es muy largo */
+            pointer-events: none;
+        }
+        
+        /* Estilo de la diapositiva activa (la que se muestra) */
+        .active-slide {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Estilo para los botones de navegación */
+        .nav-arrow {
+            position: absolute; /* Anclado al presentation-container */
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 50;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 flex items-center justify-center p-4">
+
+    <!-- Contenedor Principal de la Presentación -->
+    <div class="max-w-6xl presentation-container">
+
+        <!-- Contenedor de Diapositivas -->
+        <div id="slides-container">
+
+            <!-- Diapositiva 0: Título -->
+            <div class="slide p-8 md:p-12 flex items-center justify-center text-center active-slide">
+                <header>
+                    <h1 class="text-4xl md:text-5xl font-bold text-teal-700 mb-3">Modelos Formativos en Calidad y Seguridad del Paciente</h1>
+                    <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">Presentación de los itinerarios formativos para la mejora continua.</p>
+                </header>
+            </div>
+
+            <!-- Diapositiva 1: Objetivos -->
+            <div class="slide p-8 md:p-12 flex items-center justify-center">
+                <div class="w-full max-w-2xl">
+                    <h2 class="text-3xl font-semibold text-teal-800 mb-8 text-center">Objetivos Comunes de los Planes Docentes</h2>
+                    <div class="flex flex-col space-y-5">
+                        <span class="flex items-center bg-teal-50 border-l-4 border-teal-500 text-teal-800 p-4 rounded-lg shadow-sm text-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            Homogeneizar el conocimiento
+                        </span>
+                        <span class="flex items-center bg-teal-50 border-l-4 border-teal-500 text-teal-800 p-4 rounded-lg shadow-sm text-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                            Fortalecer la cultura de seguridad
+                        </span>
+                        <span class="flex items-center bg-teal-50 border-l-4 border-teal-500 text-teal-800 p-4 rounded-lg shadow-sm text-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg>
+                            Implementar herramientas avanzadas
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 2: Mandos Intermedios (HTML PRE-RENDERIZADO) -->
+            <div class="slide p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-start md:items-center mb-6 md:mb-8">
+                    <div class="mr-5 mb-4 md:mb-0 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-teal-700">Mandos Intermedios (Directivos y Jefes de Área)</h2>
+                        <p class="text-2xl font-medium text-gray-600">Arquitectos del Sistema</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-sm font-semibold text-teal-600 uppercase">Enfoque Principal</span>
+                            <h4 class="text-xl font-semibold text-gray-800 mt-1">Estratégico y Liderazgo</h4>
+                            <p class="text-gray-600 text-base mt-1">Integración de la calidad y la seguridad como factores estratégicos en la gestión y la toma de decisiones.</p>
+                        </div>
+                        <div class="border-t border-gray-200 pt-4">
+                            <span class="text-sm font-semibold text-teal-600 uppercase">Actividad Representativa</span>
+                            <h4 class="text-xl font-semibold text-gray-800 mt-1">Análisis de un Proceso Real y Debate Dirigido (Módulo 3)</h4>
+                            <p class="text-gray-600 text-base mt-1">Los participantes analizan un proceso clínico o administrativo real en su área (ej. gestión de listas de espera) y proponen mejoras, utilizando herramientas de evaluación externa (p.ej., ISO, Joint Commission, EFQM).</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 bg-gray-50 p-5 rounded-xl border border-gray-200">
+                        <div>
+                            <span class="text-sm font-semibold text-gray-500 uppercase">Metodología Clave</span>
+                            <p class="text-gray-600 text-base mt-1">Estudio de Caso, Debate Dirigido, Reflexión sobre áreas de responsabilidad. Sesiones breves (30 min) pero espaciadas (cada 3-4 meses) durante 2 años.</p>
+                        </div>
+                        <div class="border-t border-gray-200 pt-4">
+                            <span class="text-sm font-semibold text-gray-500 uppercase">Análisis del Enfoque</span>
+                            <p class="text-gray-600 text-base mt-1">Diseñado para fortalecer el rol del liderazgo. El enfoque es de alto nivel, centrado en la toma de decisiones estratégicas y la gestión de sistemas. Se centran en modelos de gestión de calidad (ACSA, ISO, EFQM) y en superar resistencias al cambio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Diapositiva 3: Profesionales Sanitarios (HTML PRE-RENDERIZADO) -->
+            <div class="slide p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-start md:items-center mb-6 md:mb-8">
+                    <div class="mr-5 mb-4 md:mb-0 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.122-1.28-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.122-1.28.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-teal-700">Profesionales Sanitarios (Médicos, Enfermeros, etc.)</h2>
+                        <p class="text-2xl font-medium text-gray-600">Operadores de Buenas Prácticas</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-sm font-semibold text-teal-600 uppercase">Enfoque Principal</span>
+                            <h4 class="text-xl font-semibold text-gray-800 mt-1">Operativo y Buenas Prácticas</h4>
+                            <p class="text-gray-600 text-base mt-1">Aplicación de herramientas de mejora en el entorno clínico diario y participación activa en la solución de problemas.</p>
+                        </div>
+                        <div class="border-t border-gray-200 pt-4">
+                            <span class="text-sm font-semibold text-teal-600 uppercase">Actividad Representativa</span>
+                            <h4 class="text-xl font-semibold text-gray-800 mt-1">Ejercicio Práctico con Diagrama de Ishikawa (Módulo 2)</h4>
+                            <p class="text-gray-600 text-base mt-1">Realización de un diagrama Causa-Efecto para analizar un problema común en la práctica clínica (ej. demoras en la recogida de resultados de laboratorio), identificando factores de mejora.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 bg-gray-50 p-5 rounded-xl border border-gray-200">
+                        <div>
+                            <span class="text-sm font-semibold text-gray-500 uppercase">Metodología Clave</span>
+                            <p class="text-gray-600 text-base mt-1">Exposición Teórica, Análisis de caso clínico real, Simulación de situaciones clínicas. Sesiones de 30-60 min cada 2-3 meses (2 años).</p>
+                        </div>
+                        <div class="border-t border-gray-200 pt-4">
+                            <span class="text-sm font-semibold text-gray-500 uppercase">Análisis del Enfoque</span>
+                            <p class="text-gray-600 text-base mt-1">Formación integral adaptada a las funciones específicas. La capacitación se orienta a la identificación, análisis y solución de problemas en sus áreas. Se familiarizan con herramientas operativas fundamentales (Ishikawa, 5S) y simulación de buenas prácticas (comunicación efectiva).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 4: MIR (HTML PRE-RENDERIZADO) -->
+            <div class="slide p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-start md:items-center mb-6 md:mb-8">
+                    <div class="mr-5 mb-4 md:mb-0 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-teal-700">MIR (Médicos Internos Residentes)</h2>
+                        <p class="text-2xl font-medium text-gray-600">Ingenieros Analíticos</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-sm font-semibold text-teal-600 uppercase">Enfoque Principal</span>
+                            <h4 class="text-xl font-semibold text-gray-800 mt-1">Analítico y Progresivo</h4>
+                            <p class="text-gray-600 text-base mt-1">Adquisición de conocimiento profundo y uso de herramientas avanzadas (Global Trigger Tool, AMFE) a lo largo de un ciclo formativo extenso (4 años).</p>
+                        </div>
+                        <div class="border-t border-gray-200 pt-4">
+                            <span class="text-sm font-semibold text-teal-600 uppercase">Actividad Representativa</span>
+                            <h4 class="text-xl font-semibold text-gray-800 mt-1">Aplicación del Análisis Modal de Fallos y Efectos (AMFE) (Módulo 6, Año 2)</h4>
+                            <p class="text-gray-600 text-base mt-1">Realización de un AMFE en un caso clínico específico para identificar y priorizar riesgos antes de que ocurran fallos (gestión proactiva).</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 bg-gray-50 p-5 rounded-xl border border-gray-200">
+                        <div>
+                            <span class="text-sm font-semibold text-gray-500 uppercase">Metodología Clave</span>
+                            <p class="text-gray-600 text-base mt-1">'Píldoras formativas' muy cortas (15 min) mensualmente (4 años). Énfasis en ejercicios prácticos y análisis avanzado de datos (Diagrama de Pareto, GTT, RCA).</p>
+                        </div>
+                        <div class="border-t border-gray-200 pt-4">
+                            <span class="text-sm font-semibold text-gray-500 uppercase">Análisis del Enfoque</span>
+                            <p class="text-gray-600 text-base mt-1">Es el itinerario más extenso y profundo. La formación es progresiva: desde fundamentos básicos (Año 1) hasta técnicas avanzadas (AMFE, Pareto) y aplicación (GTT, Mapa de Riesgos). Gran énfasis en el análisis de datos y la gestión proactiva, preparando al médico para diseñar programas de seguridad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diapositiva 5: EIR (HTML PRE-RENDERIZADO) -->
+            <div class="slide p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-start md:items-center mb-6 md:mb-8">
+                    <div class="mr-5 mb-4 md:mb-0 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-teal-700">EIR (Enfermeros Internos Residentes)</h2>
+                        <p class="text-2xl font-medium text-gray-600">Especialistas en Riesgo Clínico</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-sm font-semibold text-teal-600 uppercase">Enfoque Principal</span>
+                            <h4 class="text-xl font-semibold text-gray-800 mt-1">Clínico Específico y Prevención Directa</h4>
+                            <p class="text-gray-600 text-base mt-1">Énfasis en la seguridad del paciente ligada a procedimientos específicos de Enfermería (gestión de medicación, comunicación).</p>
+                        </div>
+                        <div class="border-t border-gray-200 pt-4">
+                            <span class="text-sm font-semibold text-teal-600 uppercase">Actividad Representativa</span>
+                            <h4 class="text-xl font-semibold text-gray-800 mt-1">Simulación de Administración Segura de Fármacos (Módulo 4)</h4>
+                            <p class="text-gray-600 text-base mt-1">Simulación práctica de una situación clínica donde se aplica el doble chequeo y otras prácticas seguras para prevenir errores de medicación en la práctica enfermera.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 bg-gray-50 p-5 rounded-xl border border-gray-200">
+                        <div>
+                            <span class="text-sm font-semibold text-gray-500 uppercase">Metodología Clave</span>
+                            <p class="text-gray-600 text-base mt-1">Sesiones de 30 min bimensuales (ciclo bianual). Uso intensivo de la simulación (20 minutos de simulación en sesiones de 30 min) y ejercicios prácticos aplicados a Enfermería.</p>
+                        </div>
+                        <div class="border-t border-gray-200 pt-4">
+                            <span class="text-sm font-semibold text-gray-500 uppercase">Análisis del Enfoque</span>
+                            <p class="text-gray-600 text-base mt-1">Contenido aplicado y adaptado específicamente a la práctica de Enfermería (Seguridad en Medicación, Indicadores de Calidad). La metodología se inclina fuertemente hacia la simulación de situaciones de alto riesgo y la gestión de riesgos de alta frecuencia en el punto de atención.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Botones de Navegación -->
+        <button id="prev-slide" class="nav-arrow left-[-20px] md:left-[-25px] bg-white/70 backdrop-blur-sm hover:bg-teal-600 hover:text-white text-teal-600 p-3 rounded-full shadow-lg transition duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <button id="next-slide" class="nav-arrow right-[-20px] md:right-[-25px] bg-white/70 backdrop-blur-sm hover:bg-teal-600 hover:text-white text-teal-600 p-3 rounded-full shadow-lg transition duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+        
+        <!-- Contador de Diapositivas -->
+        <div id="slide-counter" class="fixed bottom-4 right-4 bg-gray-800 text-white text-sm px-3 py-1 rounded-full shadow-md z-50 opacity-75"></div>
+
+    </div>
+
+    <!-- INICIO DEL SCRIPT DE NAVEGACIÓN -->
+    <script>
+        // Espera a que todo el HTML esté cargado
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- LÓGICA DE LA PRESENTACIÓN ---
+            // Esta vez, el script NO construye el HTML, solo se encarga de navegar.
+            
+            // 1. Encontrar todos los elementos que necesitamos
+            const slides = document.querySelectorAll('.slide'); // Colección de todas las diapositivas (6 en total)
+            const prevButton = document.getElementById('prev-slide');
+            const nextButton = document.getElementById('next-slide');
+            const slideCounter = document.getElementById('slide-counter');
+            
+            let currentSlide = 0; // Variable para saber en qué diapositiva estamos
+            const totalSlides = slides.length; // El número total de diapositivas (debería ser 6)
+
+            // 2. Función principal para mostrar una diapositiva
+            function showSlide(index) {
+                // Validar que el índice no se salga de los límites
+                if (index < 0) {
+                    index = 0;
+                }
+                if (index >= totalSlides) {
+                    index = totalSlides - 1;
+                }
+
+                currentSlide = index; // Actualizar la diapositiva actual
+
+                // Recorrer todas las diapositivas
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        // Si es la diapositiva que queremos mostrar, le añadimos la clase 'active-slide'
+                        slide.classList.add('active-slide');
+                    } else {
+                        // A todas las demás, se la quitamos
+                        slide.classList.remove('active-slide');
+                    }
+                });
+
+                // Actualizar el contador (ej. "3 / 6")
+                slideCounter.textContent = `${index + 1} / ${totalSlides}`;
+
+                // Ocultar el botón "anterior" si estamos en la primera diapositiva
+                prevButton.style.display = (index === 0) ? 'none' : 'block';
+                // Ocultar el botón "siguiente" si estamos en la última diapositiva
+                nextButton.style.display = (index === totalSlides - 1) ? 'none' : 'block';
+            }
+
+            // 3. Asignar eventos a los botones
+            prevButton.addEventListener('click', () => {
+                showSlide(currentSlide - 1); // Ir a la diapositiva anterior
+            });
+
+            nextButton.addEventListener('click', () => {
+                showSlide(currentSlide + 1); // Ir a la diapositiva siguiente
+            });
+
+            // 4. (Opcional) Navegación con teclado
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                    showSlide(currentSlide + 1);
+                } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                    showSlide(currentSlide - 1);
+                }
+            });
+
+            // 5. ESTADO INICIAL: Mostrar la primera diapositiva (índice 0)
+            showSlide(0);
+
+        });
+    </script>
+    <!-- FIN DEL SCRIPT -->
+
+</body>
+</html>
